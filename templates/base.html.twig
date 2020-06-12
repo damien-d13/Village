@@ -10,18 +10,30 @@
     <body>
     <header>
     {% block header %}
-    <div class="nav">
-    <img id="image-home" src="{{ asset('/assets/images/hill.jpg')}}" alt="image village">
-        <nav>
-            <div class="nav-liens">
-                <a id="liens-ext" href="">Information</a>
-                <a id="liens-center" href="">Aide</a>
-                <a id="ville" href="{{ path('home') }}">Silent Hill</a>
-                <a id="liens-center" href="">Evenement</a>
-                <a id="liens-ext" href="">Contact</a>
+    {#  Panneau  #}
+    <div class="panneau-container">
+        <div class="panneau">
+            <div class="panneau-ext">
+                <div class="panneau-red">
+                    <p>Silent Hill</p>
+                </div>
             </div>
-        </nav>
-</div>
+        </div>
+     </div>
+    {# NavBar #}
+        <div class="nav">
+        <div class="back-nav"></div>
+            <img id="image-home" src="{{ asset('/assets/images/hill.jpg')}}" alt="image village">
+            <nav>
+                <div class="nav-liens">
+                    <a id="liens-ext" href="">Information</a>
+                    <a id="liens-center" href="">Aide</a>
+                    <a id="ville" href="{{ path('home') }}">Silent Hill</a>
+                    <a id="liens-center" href="">Evenement</a>
+                    <a id="liens-ext" href="">Contact</a>
+                </div>
+            </nav>
+        </div>
     {% endblock %}
     </header>
         {% block body %}{% endblock %}
