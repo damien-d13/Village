@@ -26,11 +26,11 @@
             <img id="image-home" src="{{ asset('/assets/images/hill.jpg')}}" alt="image village">
             <nav>
                 <div class="nav-liens">
-                    <a id="liens-ext" href="">Information</a>
-                    <a id="liens-center" href="">Aide</a>
+                    <a id="liens-ext" href="{{ path('information') }}">Information</a>
+                    <a id="liens-center" href="{{ path('aide') }}">Aide</a>
                     <a id="ville" href="{{ path('home') }}">Silent Hill</a>
-                    <a id="liens-center" href="">Evenement</a>
-                    <a id="liens-ext" href="">Contact</a>
+                    <a id="liens-center" href="{{ path('evenement') }}">Evenement</a>
+                    <a id="liens-ext" href="{{ path('contact') }}">Contact</a>
                 </div>
             </nav>
         </div>
