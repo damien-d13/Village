@@ -63,6 +63,9 @@ class Evenement
     public function __construct()
     {
         $this->images = new ArrayCollection();
+        $this->created_at = new \DateTime();
+        $this->updated_at = new \DateTime();
+        $this->date = new \DateTime();
     }
 
     public function getId(): ?int
