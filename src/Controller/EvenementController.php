@@ -4,35 +4,82 @@ namespace App\Controller;
 
 use App\Entity\Adresse;
 use App\Entity\Evenement;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\BrowserKit\Response;
+use App\Repository\AdresseRepository;
+use App\Repository\EvenementRepository;
+use Doctrine\Common\Persistence\ObjectManager;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class EvenementController extends AbstractController
 {
+
     /**
-     * @Route("/evenement", name="evenement")
+     * @var EvenementRepository
+     */
+    private $evenementRepository;
+
+    public function __construct(EvenementRepository $evenementRepository)
+    {
+        $this->evenementRepository = $evenementRepository;
+       
+        
+    }
+
+    /**
+     * @Route("/evenement", name="evenement.index")
      * @return Response
      */
     public function index(): Response
     {
-        $adresse =new Adresse();
-        $adresse ->setLabel('Salle des fêtes')
-                    ->setNumber('13')
-                    ->setStreet('avenue du general de Gaulle')
-                    ->setCity('Silent Hill');
-                    $em =$this->getDoctrine()->getManager();
-                    $em->persist($adresse);
-        $evenement = new Evenement();
-        $evenement->setLabel('Evenement musical')
-                    ->setDescription('Concert gratuit, vous etes bienvenu')
-                    ->setLocalisation('https://www.google.fr/maps/preview')
-                    ->setAdresse($this->adresse);
-                $em =$this->getDoctrine()->getManager();
-                $em->persist($evenement, $adresse);
-                $em->flush();
+
+
+        // $em =$this->getDoctrine()->getManager();
+
+        // $adresse =new Adresse();
+        // $adresse ->setLabel('Salle polyvalent')
+        //             ->setNumber('13')
+        //             ->setStreet('avenue doctor queen')
+        //             ->setCity('Silent Hill')
+        //             ->setCountry('France');
+        //             $em->persist($adresse);
+
+        // $evenement = new Evenement();
+        // $evenement->setLabel('Evenement sportif')
+        //             ->setDescription('Concours , vous etes bienvenu')
+        //             ->setLocalisation('https://www.google.fr/maps/preview')
+        //             ->setAdresse($adresse);
+                
+        //         $em->persist($evenement);
+        //         $em->flush();
+
+        $evenements = $this->evenementRepository->findLastest();
+    
+        
         return $this->render('evenement/index.html.twig', [
-            'controller_name' => 'EvenementController',
+            'evenements' => $evenements
+        ]);
+    }
+
+     /**
+     * @Route("/detail/{slug}-{id}", name="evenement.detail", requirements={"slug": "[a-z0-9\-]*"})
+     * @param Evenement $evenement
+     * @param Adresse $adresse
+     * @return Response
+     */
+    public function detail(Evenement $evenement, string $slug): Response
+    {
+
+        if($evenement->getSlug() !== $slug){
+           return $this->redirectToRoute('evenement.detail', [
+                'id' => $evenement->getId(),
+                'slug' => $evenement->getSlug()
+            ], 301);
+        }
+
+        return $this->render('evenement/detail.html.twig', [
+            'evenement' => $evenement,
+            
         ]);
     }
 }

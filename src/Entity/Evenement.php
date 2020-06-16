@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\EvenementRepository;
+use Cocur\Slugify\Slugify;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -50,7 +51,7 @@ class Evenement
     private $localisation;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Adresse::class)
+     * @ORM\ManyToOne(targetEntity=Adresse::class, fetch="EAGER")
      * @ORM\JoinColumn(nullable=false)
      */
     private $adresse;
@@ -76,6 +77,11 @@ class Evenement
     public function getLabel(): ?string
     {
         return $this->label;
+    }
+
+    public function getSlug(): string
+    {
+        return (new Slugify())->slugify($this->label);
     }
 
     public function setLabel(string $label): self

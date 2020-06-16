@@ -19,6 +19,29 @@ class EvenementRepository extends ServiceEntityRepository
         parent::__construct($registry, Evenement::class);
     }
 
+
+/**
+* @return Evenement[] Returns an array of Evenement objects
+*/
+    
+    public function findlastest(): array
+    {
+         $queryBuilder = $this->createQueryBuilder('e')
+            ->orderBy('e.date', 'ASC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getResult()
+        ;
+
+
+        return $queryBuilder ;
+    }
+
+    
+    
+
+    
+
     // /**
     //  * @return Evenement[] Returns an array of Evenement objects
     //  */

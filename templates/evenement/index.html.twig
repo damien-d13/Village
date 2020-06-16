@@ -4,4 +4,29 @@
 
 {% block body %}
 <h1>Evènement</h1>
+
+<div class="container">
+
+    <h2>Les derniers évènements</h2>
+    <div class="row flex">
+    {% for evenement in evenements %}
+
+    <div class="col3">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title">
+                    <a href="{{ path('evenement.detail', {id: evenement.id, slug: evenement.slug} ) }}">{{ evenement.label }}</a>
+                </div>
+                <p class="card-text">{{ evenement.date|date("m/d/Y") }}</p>
+            </div>
+        </div>
+    </div>
+
+
+    {% endfor %}
+    
+    </div>
+
+</div>
+
 {% endblock %}
