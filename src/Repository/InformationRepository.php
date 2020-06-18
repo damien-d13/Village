@@ -19,6 +19,21 @@ class InformationRepository extends ServiceEntityRepository
         parent::__construct($registry, Information::class);
     }
 
+
+    /**
+    * @return Information[] Returns an array of Information objects
+    */
+    
+    public function findByLabel()
+    {
+        return $this->createQueryBuilder('i')
+            ->orderBy('i.title', 'ASC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
     // /**
     //  * @return Information[] Returns an array of Information objects
     //  */

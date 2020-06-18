@@ -84,6 +84,12 @@ p {
     margin: 2% 2%;
 }
 
+.date {
+    text-align: center;
+    font-weight: bolder;
+    font-size:20px;
+}
+
 /* Media queries */
 
 @media screen and (max-width: 900px) {

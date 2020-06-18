@@ -51,7 +51,7 @@ class Evenement
     private $localisation;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Adresse::class, fetch="EAGER")
+     * @ORM\ManyToOne(targetEntity=Adresse::class)
      * @ORM\JoinColumn(nullable=false)
      */
     private $adresse;

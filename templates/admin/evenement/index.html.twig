@@ -1,0 +1,34 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Gérer les évènements{% endblock %}
+
+{% block body %} 
+
+<div class="container mt-4">
+    <h1>Gérer les biens</h1>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+    </table>
+    <tbody>
+    {% for evenement in evenements %}
+        <tr>
+            <td>{{ evenement.label }} </td>
+            <td> 
+                <a href=" {{ path('admin.evenement.edit', {id: evenement.id}) }} " class="btn btn-secondary">Editer</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+
+</div>
+
+{% for evenement in evenements %}
+    
+{% endfor %}
+{% endblock %}

@@ -1,7 +1,26 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello InformationController!{% endblock %}
+{% block title %}Information{% endblock %}
 
 {% block body %}
 <h1>Information</h1>
+<div class="row flex">
+    {% for information in informations %}
+
+    <div class="col3">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title">
+                    <a href="{{ path('information.show', {id: information.id, slug: information.slug} ) }}">{{ information.title }}</a>
+                </div>
+                
+                <p class="card-text">{{ information.subtitle }}</p>
+                
+            </div>
+        </div>
+    </div>
+
+    {% endfor %}
+    
+    </div>
 {% endblock %}
