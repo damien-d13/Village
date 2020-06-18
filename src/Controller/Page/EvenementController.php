@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Page;
 
 use App\Entity\Adresse;
 use App\Entity\Evenement;
@@ -11,6 +11,10 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
+
+/**
+ * @Route("/evenement")
+ */
 class EvenementController extends AbstractController
 {
 
@@ -27,7 +31,7 @@ class EvenementController extends AbstractController
     }
 
     /**
-     * @Route("/evenement", name="evenement.index")
+     * @Route("/", name="evenement.index")
      * @return Response
      */
     public function index(): Response

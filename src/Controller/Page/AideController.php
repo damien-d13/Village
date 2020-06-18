@@ -1,14 +1,17 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Page;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+     * @Route("/aide")
+     */
 class AideController extends AbstractController
 {
     /**
-     * @Route("/aide", name="aide")
+     * @Route("/", name="aide.index")
      */
     public function index()
     {

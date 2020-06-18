@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Page;
 
 use App\Entity\Information;
 use App\Repository\InformationRepository;
@@ -8,6 +8,10 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
+
+/**
+     * @Route("/information")
+     */
 class InformationController extends AbstractController
 {
     /**
@@ -21,7 +25,7 @@ class InformationController extends AbstractController
     }
 
     /**
-     * @Route("/information", name="information")
+     * @Route("/", name="information.index")
      */
     public function index()
     {
@@ -33,7 +37,7 @@ class InformationController extends AbstractController
     }
 
     /**
-     * @Route("/information/{slug}-{id}", name="information.show", requirements={"slug": "[a-z0-9\-]*"})
+     * @Route("/{slug}-{id}", name="information.show", requirements={"slug": "[a-z0-9\-]*"})
      * @param Information
      * @return Response
      */

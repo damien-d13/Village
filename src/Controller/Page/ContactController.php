@@ -1,14 +1,17 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Page;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+     * @Route("/contact")
+     */
 class ContactController extends AbstractController
 {
     /**
-     * @Route("/contact", name="contact")
+     * @Route("/contact", name="contact.index")
      */
     public function index()
     {
