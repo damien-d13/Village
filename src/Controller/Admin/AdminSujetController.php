@@ -31,6 +31,7 @@ class AdminSujetController extends AbstractController
     public function new(Request $request): Response
     {
         $sujet = new Sujet();
+
         $form = $this->createForm(SujetType::class, $sujet);
         $form->handleRequest($request);
 
@@ -59,7 +60,7 @@ class AdminSujetController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="admin_sujet_edit", methods={"GET","POST"})
+     * @Route("/edit/{id}", name="admin_sujet_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Sujet $sujet): Response
     {

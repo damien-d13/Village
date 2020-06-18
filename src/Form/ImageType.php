@@ -4,10 +4,12 @@ namespace App\Form;
 
 use App\Entity\Image;
 use App\Entity\Evenement;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use App\Form\EvenementType;
+use App\Form\InformationType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class ImageType extends AbstractType
 {
@@ -17,8 +19,8 @@ class ImageType extends AbstractType
             ->add('label')
             ->add('image_name')
             ->add('created_at')
-            ->add('illustrer', ChoiceType::class)
-            ->add('information', ChoiceType::class)
+            ->add('illustrer', EvenementType::class)
+            ->add('information', InformationType::class)
         ;
     }
 

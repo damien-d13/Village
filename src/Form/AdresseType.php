@@ -24,6 +24,7 @@ class AdresseType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Adresse::class,
+            'translation_domain' => 'forms',
         ]);
     }
 }
