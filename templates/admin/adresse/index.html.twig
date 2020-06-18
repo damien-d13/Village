@@ -27,8 +27,8 @@
                 <td>{{ adresse.city }}</td>
                 <td>{{ adresse.country }}</td>
                 <td>
-                    <a href="{{ path('admin.adresse.show', {'id': adresse.id}) }}">show</a>
-                    <a href="{{ path('admin.adresse.edit', {'id': adresse.id}) }}">edit</a>
+                    <a href="{{ path('admin_adresse_show', {'id': adresse.id}) }}">show</a>
+                    <a href="{{ path('admin_adresse_edit', {'id': adresse.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -39,5 +39,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('admin.adresse.new') }}">Create new</a>
+    <a href="{{ path('admin_adresse_new') }}">Create new</a>
 {% endblock %}

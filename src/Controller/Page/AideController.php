@@ -15,7 +15,7 @@ class AideController extends AbstractController
      */
     public function index()
     {
-        return $this->render('aide/index.html.twig', [
+        return $this->render('page/aide/index.html.twig', [
             'controller_name' => 'AideController',
         ]);
     }

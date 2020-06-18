@@ -10,11 +10,13 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-
+ /**
+     * @Route("/admin/adresse")
+     */
 class AdminAdresseController extends AbstractController
 {
     /**
-     * @Route("/admin/adresse", name="admin.adresse.index", methods={"GET"})
+     * @Route("/", name="admin_adresse_index", methods={"GET"})
      */
     public function index(AdresseRepository $adresseRepository): Response
     {
@@ -24,7 +26,7 @@ class AdminAdresseController extends AbstractController
     }
 
     /**
-     * @Route("/admin/adresse/new", name="admin.adresse.new", methods={"GET","POST"})
+     * @Route("/new", name="admin_adresse_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
@@ -47,7 +49,7 @@ class AdminAdresseController extends AbstractController
     }
 
     /**
-     * @Route("/admin/adresse/{id}", name="admin.adresse.show", methods={"GET"})
+     * @Route("/{id}", name="admin_adresse_show", methods={"GET"})
      */
     public function show(Adresse $adresse): Response
     {
@@ -57,7 +59,7 @@ class AdminAdresseController extends AbstractController
     }
 
     /**
-     * @Route("/admin/adresse/{id}/edit", name="admin.adresse.edit", methods={"GET","POST"})
+     * @Route("/{id}/edit", name="admin_adresse_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Adresse $adresse): Response
     {

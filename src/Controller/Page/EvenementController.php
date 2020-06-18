@@ -60,7 +60,7 @@ class EvenementController extends AbstractController
         $evenements = $this->evenementRepository->findLastest();
     
         
-        return $this->render('evenement/index.html.twig', [
+        return $this->render('page/evenement/index.html.twig', [
             'evenements' => $evenements
         ]);
     }
@@ -75,13 +75,13 @@ class EvenementController extends AbstractController
     {
 
         if($evenement->getSlug() !== $slug){
-           return $this->redirectToRoute('evenement.detail', [
+           return $this->redirectToRoute('page.evenement.detail', [
                 'id' => $evenement->getId(),
                 'slug' => $evenement->getSlug()
             ], 301);
         }
 
-        return $this->render('evenement/detail.html.twig', [
+        return $this->render('page/evenement/detail.html.twig', [
             'evenement' => $evenement,
             
         ]);

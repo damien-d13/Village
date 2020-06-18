@@ -31,7 +31,7 @@ class InformationController extends AbstractController
     {
         $informations = $this->informationRepository->findByLabel();
 
-        return $this->render('information/index.html.twig', [
+        return $this->render('page/information/index.html.twig', [
             'informations' => $informations
         ]);
     }
@@ -45,13 +45,13 @@ class InformationController extends AbstractController
     {
         
         if($information->getSlug() !== $slug){
-            return $this->redirectToRoute('information.show', [
+            return $this->redirectToRoute('page.information.show', [
                  'id' => $information->getId(),
                  'slug' => $information->getSlug()
              ], 301);
          }
 
-        return $this->render('information/show.html.twig', [
+        return $this->render('page/information/show.html.twig', [
             'information' => $information
         ]);
     }

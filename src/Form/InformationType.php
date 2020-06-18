@@ -2,31 +2,31 @@
 
 namespace App\Form;
 
-use App\Entity\Evenement;
+use App\Entity\Information;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\ChoiceList\ChoiceList;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
-class EvenementType extends AbstractType
+class InformationType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('label')
+            ->add('title')
+            ->add('subtitle')
             ->add('description')
-            ->add('date')
-            ->add('created_at')
-            ->add('updated_at')
-            ->add('localisation')
-            ->add('adresse', AdresseType::class)
-            
+           /* ->add('sujet', ChoiceType::class, [
+                'choice_label' => ChoiceList::label($this, 'label'),
+            ]);*/
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Evenement::class,
+            'data_class' => Information::class,
         ]);
     }
 }

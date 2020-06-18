@@ -10,6 +10,10 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
+
+/**
+     * @Route("/admin/evenement")
+     */
 class AdminEvenementController extends  AbstractController
 {
 
@@ -25,7 +29,7 @@ class AdminEvenementController extends  AbstractController
 
 
     /**
-     * @Route("/admin/evenement", name="admin.evenement.index")
+     * @Route("/", name="admin_evenement_index")
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function index()
@@ -37,7 +41,7 @@ class AdminEvenementController extends  AbstractController
     }
 
     /**
-     * @Route("/admin/evenement/edit/{id}", name="admin.evenement.edit")
+     * @Route("/edit/{id}", name="admin_evenement_edit")
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function edit(Evenement $evenement )
