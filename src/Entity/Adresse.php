@@ -2,11 +2,14 @@
 
 namespace App\Entity;
 
-use App\Repository\AdresseRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\AdresseRepository;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass=AdresseRepository::class)
+ * @UniqueEntity("label")
  */
 class Adresse
 {
@@ -19,16 +22,19 @@ class Adresse
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(min = 5, max = 255)
      */
     private $label;
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\Length(max = 5)
      */
     private $number;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(min = 5, max = 255)
      */
     private $street;
 
@@ -41,6 +47,12 @@ class Adresse
      * @ORM\Column(type="string", length=255)
      */
     private $country;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @Assert\Regex("/^[0-9]{5}$/")
+     */
+    private $code_postal;
 
     public function getId(): ?int
     {
@@ -103,6 +115,18 @@ class Adresse
     public function setCountry(string $country): self
     {
         $this->country = $country;
+
+        return $this;
+    }
+
+    public function getCodePostal(): ?string
+    {
+        return $this->code_postal;
+    }
+
+    public function setCodePostal(string $code_postal): self
+    {
+        $this->code_postal = $code_postal;
 
         return $this;
     }

@@ -10,6 +10,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity(repositoryClass=InformationRepository::class)
+ * @UniqueEntity("title")
  */
 class Information
 {

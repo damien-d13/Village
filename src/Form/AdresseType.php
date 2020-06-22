@@ -17,6 +17,7 @@ class AdresseType extends AbstractType
             ->add('street')
             ->add('city')
             ->add('country')
+            ->add('code_postal')
         ;
     }
 

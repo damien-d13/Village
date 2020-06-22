@@ -14,6 +14,7 @@
                 <th>Street</th>
                 <th>City</th>
                 <th>Country</th>
+                <th>Code Postal</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -26,6 +27,7 @@
                 <td>{{ adresse.street }}</td>
                 <td>{{ adresse.city }}</td>
                 <td>{{ adresse.country }}</td>
+                <td>{{ adresse.codepostal }}</td>
                 <td>
                     <a href="{{ path('admin_adresse_show', {'id': adresse.id}) }}">show</a>
                     <a href="{{ path('admin_adresse_edit', {'id': adresse.id}) }}">edit</a>

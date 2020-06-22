@@ -2,10 +2,13 @@
 
 namespace App\Form;
 
+use App\Entity\Adresse;
 use App\Entity\Evenement;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class EvenementType extends AbstractType
 {
@@ -18,7 +21,11 @@ class EvenementType extends AbstractType
             ->add('created_at')
             ->add('updated_at')
             ->add('localisation')
-            ->add('adresse', AdresseType::class)
+            ->add('adresse', EntityType::class, [
+                'class' => Adresse::class,
+                'choice_label' => 'label'
+            ])
+            //->add('adresse', AdresseType::class)
             
         ;
     }

@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Evenement{% endblock %}
+
+{% block body %}
+    <h1>Evenement</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ evenement.id }}</td>
+            </tr>
+            <tr>
+                <th>Label</th>
+                <td>{{ evenement.label }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ evenement.description }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ evenement.date ? evenement.date|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Created_at</th>
+                <td>{{ evenement.createdAt ? evenement.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Updated_at</th>
+                <td>{{ evenement.updatedAt ? evenement.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Localisation</th>
+                <td>{{ evenement.localisation }}</td>
+            </tr>
+            <tr>
+                <th>Nom de l'adresse</th>
+                <td>{{ evenement.adresse.label }}</td>
+            </tr>
+             <tr>
+                <th>Numero</th>
+                <td>{{ evenement.adresse.number }}</td>
+            </tr>
+             <tr>
+                <th>Rue</th>
+                <td>{{ evenement.adresse.street }}</td>
+            </tr>
+             <tr>
+                <th>Ville</th>
+                <td>{{ evenement.adresse.city }}</td>
+            </tr>
+             <tr>
+                <th>Pays</th>
+                <td>{{ evenement.adresse.country }}</td>
+            </tr>
+             <tr>
+                <th>Code Postal</th>
+                <td>{{ evenement.adresse.codepostal }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_evenement_index') }}">back to list</a>
+
+    <a href="{{ path('admin_evenement_edit', {'id': evenement.id}) }}">edit</a>
+
+    {{ include('admin/evenement/_delete_form.html.twig') }}
+{% endblock %}
