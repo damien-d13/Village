@@ -31,7 +31,7 @@ class RegistrationController extends AbstractController
                     $form->get('plainPassword')->getData()
                 )
             );
-            $user->setRoles($this->getParameter('security.role_hierachy.roles'));
+            //$user->setRoles($this->getParameter('security.role_hierachy.roles'));
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
