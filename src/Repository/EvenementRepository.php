@@ -3,8 +3,9 @@
 namespace App\Repository;
 
 use App\Entity\Evenement;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @method Evenement|null find($id, $lockMode = null, $lockVersion = null)
@@ -21,15 +22,14 @@ class EvenementRepository extends ServiceEntityRepository
 
 
 /**
-* @return Evenement[] Returns an array of Evenement objects
+* @return QueryBuilder
 */
     
-    public function findlastest(): array
+    public function findlastestQueryBuilder(): QueryBuilder
     {
          $queryBuilder = $this->createQueryBuilder('e')
             ->orderBy('e.date', 'ASC')
-            ->getQuery()
-            ->getResult()
+            
         ;
 
 

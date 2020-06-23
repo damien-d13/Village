@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Information;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -21,15 +22,14 @@ class InformationRepository extends ServiceEntityRepository
 
 
     /**
-    * @return Information[] Returns an array of Information objects
+    * @return QueryBuilder
     */
     
-    public function findByLabel()
+    public function findByLabelQuery(): QueryBuilder
     {
         return $this->createQueryBuilder('i')
             ->orderBy('i.title', 'ASC')
-            ->getQuery()
-            ->getResult()
+            
         ;
     }
 

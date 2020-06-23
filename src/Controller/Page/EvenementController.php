@@ -6,6 +6,8 @@ use App\Entity\Adresse;
 use App\Entity\Evenement;
 use App\Repository\AdresseRepository;
 use App\Repository\EvenementRepository;
+use Knp\Component\Pager\PaginatorInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -34,14 +36,18 @@ class EvenementController extends AbstractController
      * @Route("/", name="evenement.index")
      * @return Response
      */
-    public function index(): Response
+    public function index(Request $request, PaginatorInterface $paginator): Response
     {
 
-        $evenements = $this->evenementRepository->findLastest();
-    
-        
+
+        $evenements = $this->evenementRepository->findlastestQueryBuilder();
+        $pagination = $paginator->paginate(
+            $evenements, /* query NOT result */
+            $request->query->getInt('page', 1)/*page number*/,
+            10/*limit per page*/
+        );
         return $this->render('page/evenement/index.html.twig', [
-            'evenements' => $evenements
+            'pagination' => $pagination,
         ]);
     }
 

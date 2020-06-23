@@ -4,12 +4,12 @@
 
 {% block body %}
 <h1>Evènement</h1>
-
+ 
 <div class="container">
 
-    <h2>Les derniers évènements</h2>
+    <h2>Les {{ pagination.getTotalItemCount }} derniers évènements</h2>
     <div class="row flex">
-    {% for evenement in evenements %}
+    {% for evenement in pagination %}
 
     <div class="col3">
         <div class="card">
@@ -21,11 +21,13 @@
             </div>
         </div>
     </div>
-
+ 
     {% endfor %}
     
     </div>
-
+<div class="navigation">
+    {{ knp_pagination_render(pagination) }}
+</div>
 </div>
 
 {% endblock %}
