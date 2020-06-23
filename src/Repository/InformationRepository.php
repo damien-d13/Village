@@ -28,7 +28,6 @@ class InformationRepository extends ServiceEntityRepository
     {
         return $this->createQueryBuilder('i')
             ->orderBy('i.title', 'ASC')
-            ->setMaxResults(10)
             ->getQuery()
             ->getResult()
         ;

@@ -39,6 +39,7 @@
     width: 100%;
     height: 250px;
     background: rgb(243, 243, 243);
+    z-index: 2;
 }
 #image-home {
     width: 70%;
@@ -56,6 +57,7 @@
     justify-content: center;
     margin: 150px 25% 0 25%;
     position: fixed;
+    z-index: 3;
     
 }
 

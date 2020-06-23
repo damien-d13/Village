@@ -13,13 +13,13 @@ class MessageFixture extends Fixture
     {
         $faker = Factory::create('fr_FR');
         for ($i=0; $i < 50; $i++) { 
-           $adresse = new Message();
-           $adresse->setObject($faker->words(3, true))
+           $message = new Message();
+           $message->setObject($faker->words(3, true))
                     ->setDescription($faker->sentences($nb = 3, $asText = true))
                     ->setCreatedAt($faker->dateTimeAD($max = 'now', $timezone = null))
                         
            ; 
-           $manager->persist($adresse);
+           $manager->persist($message);
         }
 
         $manager->flush();

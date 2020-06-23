@@ -37,26 +37,6 @@ class EvenementController extends AbstractController
     public function index(): Response
     {
 
-
-        // $em =$this->getDoctrine()->getManager();
-
-        // $adresse =new Adresse();
-        // $adresse ->setLabel('Salle polyvalent')
-        //             ->setNumber('13')
-        //             ->setStreet('avenue doctor queen')
-        //             ->setCity('Silent Hill')
-        //             ->setCountry('France');
-        //             $em->persist($adresse);
-
-        // $evenement = new Evenement();
-        // $evenement->setLabel('Evenement sportif')
-        //             ->setDescription('Concours , vous etes bienvenu')
-        //             ->setLocalisation('https://www.google.fr/maps/preview')
-        //             ->setAdresse($adresse);
-                
-        //         $em->persist($evenement);
-        //         $em->flush();
-
         $evenements = $this->evenementRepository->findLastest();
     
         
