@@ -48,6 +48,7 @@
     margin-top: 0;
     margin-bottom: 0;
     position: fixed;
+    z-index: 2;
 }
 
 .nav-liens {

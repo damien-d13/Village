@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+Use App\Entity\Image;
 use App\Repository\EvenementRepository;
 use Cocur\Slugify\Slugify;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -13,6 +14,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 /**
  * @ORM\Entity(repositoryClass=EvenementRepository::class)
  * @UniqueEntity("label")
+ * 
  */
 class Evenement
 {
@@ -60,7 +62,7 @@ class Evenement
     private $adresse;
 
     /**
-     * @ORM\OneToMany(targetEntity=Image::class, mappedBy="illustrer")
+     * @ORM\OneToMany(targetEntity=Image::class, mappedBy="illustrer", cascade={"persist"}, fetch="EAGER")
      */
     private $images;
 

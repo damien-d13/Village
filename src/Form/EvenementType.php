@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+use App\Entity\Image;
 use App\Entity\Adresse;
 use App\Entity\Evenement;
 use Symfony\Component\Form\AbstractType;
@@ -25,6 +26,13 @@ class EvenementType extends AbstractType
                 'class' => Adresse::class,
                 'choice_label' => 'label'
             ])
+            ->add('images', EntityType::class, [
+                'class' => Image::class,
+                'choice_label' => 'label',
+                'required' => false,
+                'multiple' => true
+            ])
+            
             //->add('adresse', AdresseType::class)
             
         ;

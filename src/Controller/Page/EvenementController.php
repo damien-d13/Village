@@ -4,6 +4,7 @@ namespace App\Controller\Page;
 
 use App\Entity\Adresse;
 use App\Entity\Evenement;
+use App\Entity\Image;
 use App\Repository\AdresseRepository;
 use App\Repository\EvenementRepository;
 use Knp\Component\Pager\PaginatorInterface;
@@ -34,6 +35,7 @@ class EvenementController extends AbstractController
 
     /**
      * @Route("/", name="evenement.index")
+     * @param Image $image
      * @return Response
      */
     public function index(Request $request, PaginatorInterface $paginator): Response
@@ -55,6 +57,7 @@ class EvenementController extends AbstractController
      * @Route("/detail/{slug}-{id}", name="evenement.detail", requirements={"slug": "[a-z0-9\-]*"})
      * @param Evenement $evenement
      * @param Adresse $adresse
+     * @param Image $image
      * @return Response
      */
     public function detail(Evenement $evenement, string $slug): Response

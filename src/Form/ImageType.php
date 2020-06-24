@@ -8,6 +8,7 @@ use App\Form\EvenementType;
 use App\Form\InformationType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -18,17 +19,16 @@ class ImageType extends AbstractType
     {
         $builder
             ->add('label')
-            ->add('image_name', FileType::class, [
-                'mapped' => false,
-                'required' => false,
-                'constraints' => [
-                    new Image([
-                        'maxSize' => '5k'
-                    ])
-                ]
+            ->add('imageFile', FileType::class, [
+                'required' => false
+ 
             ])
             ->add('created_at')
-            ->add('illustrer', EvenementType::class)
+            ->add('illustrer', EntityType::class, [
+                'class' => Evenement::class,
+                'choice_label' => 'label'
+                
+            ])
             ->add('information', InformationType::class)
         ;
     }

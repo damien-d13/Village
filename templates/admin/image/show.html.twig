@@ -17,7 +17,7 @@
             </tr>
             <tr>
                 <th>Image_name</th>
-                <td>{{ image.imageName }}</td>
+                <td> <img src="{{ vich_uploader_asset(image, 'imageFile') | imagine_filter('thumb') }}" alt=""> </td>
             </tr>
             <tr>
                 <th>Created_at</th>
