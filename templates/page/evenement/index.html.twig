@@ -18,6 +18,7 @@
                     <a href="{{ path('evenement.detail', {id: evenement.id, slug: evenement.slug} ) }}">{{ evenement.label }}</a>
                 </div>
                 <p class="card-text">{{ evenement.date|date("m/d/Y") }}</p>
+                {# <img src="/assets/uploads/{{ evenement.images.imageName }}" alt=""> #}
             </div>
         </div>
     </div>

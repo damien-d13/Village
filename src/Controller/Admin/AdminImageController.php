@@ -5,10 +5,11 @@ namespace App\Controller\Admin;
 use App\Entity\Image;
 use App\Form\ImageType;
 use App\Repository\ImageRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * @Route("/admin/image")
@@ -35,6 +36,23 @@ class AdminImageController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            // /**@var UploadedFile $uploadedFile */
+            // $uploadedFile = $form['image_name']->getData();
+
+            // if($uploadedFile){
+            //     $destination = $this->getParameter('kernel.project_dir').'/public/assets/uploads';
+            
+            //     $originalFilename = pathinfo($uploadedFile->getClientOriginalName(),PATHINFO_FILENAME);
+            //     $newFilename = $originalFilename.'_'.uniqid().'.'.$uploadedFile->guessExtension();
+                
+            //     $uploadedFile->move(
+            //         $destination,
+            //         $newFilename
+            //     );
+
+            //     $image->setImageName($newFilename);
+            // }
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($image);
             $entityManager->flush();

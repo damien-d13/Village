@@ -36,12 +36,12 @@ class Image
     private $created_at;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Evenement::class, inversedBy="images")
+     * @ORM\ManyToOne(targetEntity=Evenement::class, inversedBy="images", cascade={"persist"})
      */
     private $illustrer;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Information::class, inversedBy="picture")
+     * @ORM\ManyToOne(targetEntity=Information::class, inversedBy="picture", cascade={"persist"})
      */
     private $information;
 

@@ -9,6 +9,7 @@ use App\Repository\EvenementRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 
@@ -87,6 +88,25 @@ class AdminEvenementController extends  AbstractController
             'form' => $form->createView()
         ]);
     }
+
+    // /**
+    //  * @Route("/upload/test", name="upload_test")
+    //  */
+    // public function temporaryUpLoadAction(Request $request)
+    // {
+    //     /**@var UploadedFile $uploadedFile */
+    //     $uploadedFile = $request->files->get('image');
+    //     $destination = $this->getParameter('kernel.project_dir').'/public/uploads';
+        
+    //     $originalFilename = pathinfo($uploadedFile->getClientOriginalName(),PATHINFO_FILENAME);
+    //     $newFilename = $originalFilename.'_'.uniqid().'.'.$uploadedFile->guessExtension();
+        
+    //     dd($uploadedFile->move(
+    //         $destination,
+    //         $newFilename
+    //     ));
+    // }
+
 
     /**
      * @Route("/delete/{id}", name="admin_evenement_delete", methods={"DELETE"})

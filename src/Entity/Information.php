@@ -44,7 +44,7 @@ class Information
     private $picture;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Sujet::class, inversedBy="attribuer")
+     * @ORM\ManyToOne(targetEntity=Sujet::class, inversedBy="attribuer", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $sujet;
