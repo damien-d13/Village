@@ -1,48 +1,48 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="{{ asset('assets/css/style.css')}}">
-        <title>{% block title %}Silent Hill{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-    <header>
-    {% block header %}
-    {#  Panneau  #}
-    <div class="panneau-container">
-        <div class="panneau">
-            <div class="panneau-ext">
-                <div class="panneau-red">
-                    <p>Silent Hill</p>
-                </div>
-            </div>
-        </div>
-     </div>
-    {# NavBar #}
-        <div class="nav">
-        <div class="back-nav"></div>
-        
-            <img id="image-home" src="{{ asset('/assets/images/hill.jpg')}}" alt="image village">
-            <nav>
-                <div class="nav-liens">
-                    <a id="liens-ext" href="{{ path('information.index') }}">Information</a>
-                    <a id="liens-center" href="{{ path('aide.index') }}">Aide</a>
-                    <a id="ville" href="{{ path('home') }}">Silent Hill</a>
-                    <a id="liens-center" href="{{ path('evenement.index') }}">Evenement</a>
-                    <a id="liens-ext" href="{{ path('contact.index') }}">Contact</a>
-                </div>
-            </nav>
-        </div>
-    {% endblock %}
-    </header>
-        {% block body %}{% endblock %}
-        {% block javascripts %}
-            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-            <script src="{{ asset('/assets/js/app.js')}}"></script>
-        {% endblock %}
-    </body>
-</html>
+	<head>
+		<meta charset="UTF-8">
+		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+		{{ encore_entry_link_tags('app') }}
+		<link rel="icon" type="image/png" href="{{ asset('assets/images/favicon.png')}}"/>
+		<title>
+			{% block title %}Silent Hill
+			{% endblock %}
+		</title>
+		{% block stylesheets %}{% endblock %}
+	</head>
+	<body>
+		<header>
+			{% block header %}
+				{#  Panneau  #}
+				<div class="panneau-container">
+					<div class="panneau">
+						<div class="panneau-ext">
+							<div class="panneau-red">
+								<p>Silent Hill</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				{# NavBar #}
+				<div class="nav">
+					<div class="back-nav"></div>
+
+					<img id="image-home" src="{{ asset('/assets/images/hill.jpg')}}" alt="image village">
+					<nav>
+						<div class="nav-liens">
+							<a id="liens-ext" href="{{ path('information.index') }}">Information</a>
+							<a id="liens-center" href="{{ path('aide.index') }}">Aide</a>
+							<a id="ville" href="{{ path('home') }}">Silent Hill</a>
+							<a id="liens-center" href="{{ path('evenement.index') }}">Evenement</a>
+							<a id="liens-ext" href="{{ path('contact.index') }}">Contact</a>
+						</div>
+					</nav>
+				</div>
+			{% endblock %}
+		</header>
+		{% block body %}{% endblock %}
+		{% block javascripts %}
+		<script src="../../dist/list.min.js"></script>
+		{{ encore_entry_script_tags('app') }}</body>
+</html></script</body> {% endblock %}</html>
