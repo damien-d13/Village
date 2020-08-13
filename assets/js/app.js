@@ -13,13 +13,13 @@ import $ from 'jquery';
 
 var options = {
     valueNames: [ 
-        'name', 
+        'name', 'title',
         { data: ['id'] },
         { attr: 'href', name: 'link' }
     ]
 };
 
 var hackerList = new List('hacker-list', options);
-hackerList.add({ name: 'Leia', id: 15 });
+
 
 
