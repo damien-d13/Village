@@ -43,7 +43,7 @@
 }
 #image-home {
     width: 70%;
-    height: 150px;
+    height: 100px;
     margin: 15%;
     margin-top: 0;
     margin-bottom: 0;
@@ -208,7 +208,7 @@ p {
 
 
     #image-home{
-        height: 100px;
+        height: 70px;
     }
     .nav-liens {
         margin-top: 100px;
@@ -237,7 +237,7 @@ p {
     }
     
     #image-home{
-        height: 75px;
+        height: 50px;
     }
     .nav-liens {
         margin-top: 75px;

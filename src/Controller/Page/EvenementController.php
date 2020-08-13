@@ -42,14 +42,14 @@ class EvenementController extends AbstractController
     {
 
 
-        $evenements = $this->evenementRepository->findlastestQueryBuilder();
-        $pagination = $paginator->paginate(
-            $evenements, /* query NOT result */
-            $request->query->getInt('page', 1)/*page number*/,
-            10/*limit per page*/
-        );
+        $evenements = $this->evenementRepository->findAll();
+        // $pagination = $paginator->paginate(
+        //     $evenements, /* query NOT result */
+        //     $request->query->getInt('page', 1)/*page number*/,
+        //     10/*limit per page*/
+        // );
         return $this->render('page/evenement/index.html.twig', [
-            'pagination' => $pagination,
+             'evenements' => $evenements //$pagination,
         ]);
     }
 
