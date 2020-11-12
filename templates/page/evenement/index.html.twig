@@ -12,12 +12,13 @@
 			derniers évènements</h2>
 
 		{% set myVal = 0 %}
-		<div id="hacker-list">
-			<input class="search" placeholder="Search"/>
-			<button class="sort" data-sort="name">Sort by title</button>
+		{% set direction = pagination.getDirection() %}
+		<p{% if pagination.isSorted('e.date') %} class="sorted {{ direction }}"{% endif %}>
+			{{ knp_pagination_sortable(pagination, 'date', 'e.date') }}
+		</p>
 			<div class="row flex">
 				<ul class="list">
-					 {% for evenement in evenements %} 
+					 {% for evenement in pagination %}
 						
 						<li data-id="{{ myVal }}">
 							<div class="col3">
@@ -41,12 +42,11 @@
 				</ul>
 			</div>
 		</div>
-		{# <div class="navigation">
+		 <div class="navigation">
 			{{ knp_pagination_render(pagination) }}
-		</div> #}
+		</div>
 	</div>
 
 {% endblock %}
 {% block javascript %}
-<script src="../../dist/list.min.js"></script>
 {% endblock %}

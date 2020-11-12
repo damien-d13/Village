@@ -18,12 +18,12 @@ class AdresseFixture extends Fixture
         for ($i=0; $i < 50; $i++) { 
            $adresse = new Adresse();
            $adresse->setLabel($faker->words(3, true))
-                    ->setNumber($faker->sentences($nb = 3, $asText = true))
+                    ->setNumber($faker->randomDigit)
                     ->setStreet($faker->streetName)
                     ->setCity($faker->city)
                     ->setCountry($faker->country)
-                    ->setCodePostal($faker->postcode)      
-           ; 
+                    ->setCodePostal($faker->postcode)
+           ;
           /* $this->setReference(self::FIRST_ADDRESS, $adresse);*/
            $manager->persist($adresse);
            $adresses[] = $adresse;

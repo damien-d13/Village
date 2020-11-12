@@ -21,6 +21,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class EvenementController extends AbstractController
 {
 
+
     /**
      * @var EvenementRepository
      */
@@ -29,8 +30,7 @@ class EvenementController extends AbstractController
     public function __construct(EvenementRepository $evenementRepository)
     {
         $this->evenementRepository = $evenementRepository;
-       
-        
+
     }
 
     /**
@@ -41,15 +41,14 @@ class EvenementController extends AbstractController
     public function index(Request $request, PaginatorInterface $paginator): Response
     {
 
-
-        $evenements = $this->evenementRepository->findAll();
-        // $pagination = $paginator->paginate(
-        //     $evenements, /* query NOT result */
-        //     $request->query->getInt('page', 1)/*page number*/,
-        //     10/*limit per page*/
-        // );
+        $evenements = $this->evenementRepository->findlastestQueryBuilder();
+         $pagination = $paginator->paginate(
+             $evenements, /* query NOT result */
+             $request->query->getInt('page', 1)/*page number*/,
+             10/*limit per page*/
+         );
         return $this->render('page/evenement/index.html.twig', [
-             'evenements' => $evenements //$pagination,
+             'pagination' => $pagination,
         ]);
     }
 
