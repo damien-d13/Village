@@ -16,6 +16,7 @@
 		<p{% if pagination.isSorted('e.date') %} class="sorted {{ direction }}"{% endif %}>
 			{{ knp_pagination_sortable(pagination, 'date', 'e.date') }}
 		</p>
+		<p>{{ knp_pagination_filter(pagination, {'e.label': 'Name', 'e.description': 'Description'}) }}</p>
 			<div class="row flex">
 				<ul class="list">
 					 {% for evenement in pagination %}

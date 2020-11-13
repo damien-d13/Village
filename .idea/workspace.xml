@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="afcc38c5-fc17-4cb6-b0c8-92cb9617fab6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Page/EvenementController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Page/EvenementController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AdresseFixture.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AdresseFixture.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/EvenementRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/EvenementRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/page/evenement/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/page/evenement/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
@@ -180,6 +174,7 @@
       <updated>1605194738562</updated>
       <workItem from="1605194741624" duration="6557000" />
       <workItem from="1605211510485" duration="5872000" />
+      <workItem from="1605262749004" duration="1803000" />
     </task>
     <servers />
   </component>
@@ -191,22 +186,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1605204617508" />
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1605204618799">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1605270861568">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1605204618799" />
-    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1605204618797">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1605270861568" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1605270861568">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1605204618797" />
-    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1605204618796">
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1605270861568" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1605270861567">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1605204618796" />
-    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1605204618797">
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1605270861567" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1605270861568">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1605204618797" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1605270861568" />
     <state x="184" y="9" key="SettingsEditor" timestamp="1605202042342">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
