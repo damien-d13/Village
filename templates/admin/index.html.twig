@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Administration{% endblock %}
+
+{% block body %}
+<h1>Administration</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Voir</th>
+        </tr>
+    </thead>
+    <Tbody>
+        <tr>
+            <td>Utilisateur</td>
+            <td><a href="{{ path('admin_user_index') }}">Voir</a></td>
+        </tr>
+        <tr>
+        <tr>
+            <td>Evènement</td>
+            <td><a href="{{ path('admin_evenement_index') }}">Voir</a></td>
+        </tr>
+        <tr>
+            <td>Information</td>
+            <td><a href="{{ path('admin_information_index') }}">Voir</a></td>
+        </tr>
+        <tr>
+        <td>Adresse</td>
+        <td><a href="{{ path('admin_adresse_index') }}">Voir</a></td>
+        </tr>
+        <tr>
+        </tr>
+            <td>Message</td>
+            <td><a href="{{ path('admin_message_index') }}">Voir</a></td>
+        </tr>
+        </tr>
+            <td>Sujet</td>
+            <td><a href="{{ path('admin_sujet_index') }}">Voir</a></td>
+        </tr>
+        </tr>
+            <td>Image</td>
+            <td><a href="{{ path('admin_image_index') }}">Voir</a></td>
+        </tr>
+
+    </Tbody>
+</table>
+{% endblock %}

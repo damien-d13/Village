@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+{% block title %}Evenement
+{% endblock %}
+
+{% block body %}
+	<h1>Evènement</h1>
+
+	<div class="container">
+
+		<h2>Les
+			{# {{ pagination.getTotalItemCount }} #}
+			derniers évènements</h2>
+
+		{% set myVal = 0 %}
+		{% set direction = pagination.getDirection() %}
+		<p{% if pagination.isSorted('e.date') %} class="sorted {{ direction }}"{% endif %}>
+			{{ knp_pagination_sortable(pagination, 'date', 'e.date') }}
+		</p>
+		<p>{{ knp_pagination_filter(pagination, {'e.label': 'Name', 'e.description': 'Description'}) }}</p>
+			<div class="row flex">
+				<ul class="list">
+					 {% for evenement in pagination %}
+						
+						<li data-id="{{ myVal }}">
+							<div class="col3">
+								<div class="card">
+									{% for image in evenement.images %}
+										<img src="/assets/uploads/{{ image.imageName }} " alt="">
+									{% endfor %}
+									<div class="card-body">
+										<div class="card-title title">
+
+											<a  href="{{ path('evenement.detail', {id: evenement.id, slug: evenement.slug} ) }}" class='link name'>{{ evenement.label }}</a>
+										</div>
+										<p class="card-text">{{ evenement.date|date("m/d/Y") }}</p>
+										{# <img src="/assets/uploads/{{ evenement.images.imageName }}" alt=""> #}
+									</div>
+								</div>
+							</div>
+						</li>
+						{% set myVal = myVal + 1 %}
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+		 <div class="navigation">
+			{{ knp_pagination_render(pagination) }}
+		</div>
+	</div>
+
+{% endblock %}
+{% block javascript %}
+{% endblock %}

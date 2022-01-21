@@ -1,0 +1,26 @@
+{% extends "base.html.twig" %}
+{% block title %} {{ evenement.label }} {% endblock %}
+{% block body %}
+
+<div class="container">
+<h1>{{ evenement.label }}</h1>
+<p class="date"> {{ evenement.date|date("m/d/Y") }} </p>
+<p> {{ evenement.description }} </p>
+<p> <a href="{{ evenement.localisation }}">Localisation carte</a>  </p>
+
+<div class="row">
+<p>{{evenement.adresse.label|default('pas d\'adresse associé')}}</p>
+<p>{{evenement.adresse.number}}</p>
+<p>{{evenement.adresse.street}}</p>
+<p>{{evenement.adresse.city}}</p>
+<p>{{evenement.adresse.country}}</p>
+</div>
+<div class="row">
+<p> Crée le: {{ evenement.createdAt|date("m/d/Y") }} </p>
+<p> mise à jour le: {{ evenement.updatedAt|date("m/d/Y") }} </p>
+</div>
+</div>
+
+
+
+{% endblock %}
