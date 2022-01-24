@@ -6,12 +6,11 @@
 .panneau {
     width: 200px;
     border-radius: 10px;
-    
     background: white;
     position: absolute;
     position: fixed;
     top: 10%;
-  left: 50%;
+    left: 50%;
   /* bring your own prefixes */
   transform: translate(-50%, -50%);
     z-index: 10;
@@ -45,14 +44,9 @@
 }
 #image-home { 
     display: block;
-    margin-left: 25%;
-  margin-right: auto;
-  width: 50%;
-   
+    width: 50%;
     height: 100px;
-   
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: auto 5px auto 10px;
     position: fixed;
     z-index: 2;
 }

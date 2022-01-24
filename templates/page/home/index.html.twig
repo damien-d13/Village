@@ -4,23 +4,48 @@
 
 {% block body %}
 
-<main>
-{% block main %}
-<div class="title"></div>
-<h1>Bienvenue</h1>
+    <main>
+        {% block main %}
+            <div class="container">
+                {% for message in app.flashes('success') %}
+                    <div class="alert alert-success text-center">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+                <h1>Bienvenue</h1>
 
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores nemo modi velit, eaque quidem vitae molestiae soluta adipisci necessitatibus incidunt natus esse ea dolorem rerum, aut veniam sapiente commodi veritatis.</p>
-<p>Accusamus quos officiis suscipit ipsam labore voluptatum expedita exercitationem eum soluta sed laudantium nobis, ullam cupiditate fugiat voluptatibus totam id doloremque molestiae culpa similique. Cumque error animi quos culpa commodi.</p>
-<p>Distinctio labore perspiciatis facere saepe eos a itaque, excepturi unde modi adipisci minima atque qui assumenda numquam deleniti explicabo fugiat? Et, repellat ullam quibusdam ipsa possimus nihil ab neque harum.</p>
-<p>Nobis minus nostrum amet facilis excepturi animi! Eius ipsum molestiae fugit labore suscipit nobis, fuga sapiente recusandae esse repudiandae, deleniti aliquid dignissimos facilis reprehenderit ratione libero iure neque laboriosam. Excepturi.</p>
-<p>Id possimus odio repellat commodi veniam ea doloribus nemo voluptate reprehenderit necessitatibus facilis dolores ullam maiores exercitationem ipsa adipisci asperiores perferendis, voluptatem cupiditate delectus? Optio libero voluptas commodi veniam quo!</p>
-<p>Deserunt, ullam. Minima reiciendis ipsum facilis odit repellat dolorum, alias nostrum nihil illum natus ipsa saepe iure amet porro architecto quod vel excepturi aliquam ad minus quasi tenetur mollitia ducimus?</p>
-<p>Voluptates in, esse ea porro consectetur ullam vel numquam, doloribus recusandae laborum temporibus, illo pariatur excepturi? Maiores commodi reiciendis illum id suscipit dolor distinctio a, dolores placeat rem dolorum ab.</p>
-<p>Praesentium officiis dolorum corrupti illum! Voluptatem ipsum ut cum, porro voluptas dignissimos earum aperiam a officia asperiores cumque eaque vero enim possimus vitae harum ab neque incidunt commodi, eos minima.</p>
-<p>Molestias adipisci asperiores quasi non modi ipsum corporis velit maxime rem, facilis nostrum, inventore magni harum placeat error? Minima quibusdam exercitationem harum, velit repellendus ipsa ad suscipit temporibus. Autem, voluptatibus.</p>
-<p>Nemo maxime quos sapiente dolore nobis ullam ducimus ab soluta, consequatur praesentium aspernatur consequuntur officia molestias similique, recusandae maiores laudantium. Quam minus possimus ratione ab quia explicabo non! Numquam, provident.</p>
-
-{% endblock %}
-</main>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores nemo modi velit, eaque quidem vitae
+                    molestiae soluta adipisci necessitatibus incidunt natus esse ea dolorem rerum, aut veniam sapiente
+                    commodi veritatis.</p>
+                <p>Accusamus quos officiis suscipit ipsam labore voluptatum expedita exercitationem eum soluta sed
+                    laudantium nobis, ullam cupiditate fugiat voluptatibus totam id doloremque molestiae culpa
+                    similique. Cumque error animi quos culpa commodi.</p>
+                <p>Distinctio labore perspiciatis facere saepe eos a itaque, excepturi unde modi adipisci minima atque
+                    qui assumenda numquam deleniti explicabo fugiat? Et, repellat ullam quibusdam ipsa possimus nihil ab
+                    neque harum.</p>
+                <p>Nobis minus nostrum amet facilis excepturi animi! Eius ipsum molestiae fugit labore suscipit nobis,
+                    fuga sapiente recusandae esse repudiandae, deleniti aliquid dignissimos facilis reprehenderit
+                    ratione libero iure neque laboriosam. Excepturi.</p>
+                <p>Id possimus odio repellat commodi veniam ea doloribus nemo voluptate reprehenderit necessitatibus
+                    facilis dolores ullam maiores exercitationem ipsa adipisci asperiores perferendis, voluptatem
+                    cupiditate delectus? Optio libero voluptas commodi veniam quo!</p>
+                <p>Deserunt, ullam. Minima reiciendis ipsum facilis odit repellat dolorum, alias nostrum nihil illum
+                    natus ipsa saepe iure amet porro architecto quod vel excepturi aliquam ad minus quasi tenetur
+                    mollitia ducimus?</p>
+                <p>Voluptates in, esse ea porro consectetur ullam vel numquam, doloribus recusandae laborum temporibus,
+                    illo pariatur excepturi? Maiores commodi reiciendis illum id suscipit dolor distinctio a, dolores
+                    placeat rem dolorum ab.</p>
+                <p>Praesentium officiis dolorum corrupti illum! Voluptatem ipsum ut cum, porro voluptas dignissimos
+                    earum aperiam a officia asperiores cumque eaque vero enim possimus vitae harum ab neque incidunt
+                    commodi, eos minima.</p>
+                <p>Molestias adipisci asperiores quasi non modi ipsum corporis velit maxime rem, facilis nostrum,
+                    inventore magni harum placeat error? Minima quibusdam exercitationem harum, velit repellendus ipsa
+                    ad suscipit temporibus. Autem, voluptatibus.</p>
+                <p>Nemo maxime quos sapiente dolore nobis ullam ducimus ab soluta, consequatur praesentium aspernatur
+                    consequuntur officia molestias similique, recusandae maiores laudantium. Quam minus possimus ratione
+                    ab quia explicabo non! Numquam, provident.</p>
+            </div>
+        {% endblock %}
+    </main>
 
 {% endblock %}

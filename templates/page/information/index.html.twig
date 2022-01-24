@@ -3,27 +3,29 @@
 {% block title %}Information{% endblock %}
 
 {% block body %}
-<h1>Information</h1>
-<div class="row flex">
-    {% for information in pagination %}
+    <div class="container">
+        <h1>Information</h1>
+        <div class="row flex">
+            {% for information in pagination %}
 
-    <div class="col3">
-        <div class="card">
-            <div class="card-body">
-                <div class="card-title">
-                    <a href="{{ path('information.show', {id: information.id, slug: information.slug} ) }}">{{ information.title }}</a>
+                <div class="col3">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <a href="{{ path('information.show', {id: information.id, slug: information.slug} ) }}">{{ information.title }}</a>
+                            </div>
+
+                            <p class="card-text">{{ information.subtitle }}</p>
+
+                        </div>
+                    </div>
                 </div>
-                
-                <p class="card-text">{{ information.subtitle }}</p>
-                
-            </div>
+
+            {% endfor %}
+
+        </div>
+        <div class="navigation">
+            {{ knp_pagination_render(pagination) }}
         </div>
     </div>
-
-    {% endfor %}
-    
-    </div>
-    <div class="navigation">
-    {{ knp_pagination_render(pagination) }}
-</div>
 {% endblock %}

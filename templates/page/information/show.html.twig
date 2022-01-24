@@ -3,9 +3,10 @@
 {% block title %}{{ information.title }}{% endblock %}
 
 {% block body %}
+    <div class="container">
     <h1>{{ information.sujet.label }}</h1>
     <p>{{ information.title }}</p>
     <p>{{ information.subtitle }}</p>
     <p>{{ information.description }}</p>
-
+    </div>
 {% endblock %}

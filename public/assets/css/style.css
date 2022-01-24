@@ -4,14 +4,10 @@
 .panneau {
     width: 200px;
     border-radius: 10px;
-    
     background: white;
     position: absolute;
     position: fixed;
-    top: 15%;
-  left: 50%;
-  /* bring your own prefixes */
-  transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     z-index: 10;
 }
 
@@ -36,15 +32,13 @@
 .back-nav {
     position: absolute;
     position: fixed;
-    width: 100%;
-    height: 250px;
     background: rgb(243, 243, 243);
     z-index: 2;
 }
 #image-home {
     width: 500px;
     height: 100px;
-    margin: 0 15%;
+
     position: fixed;
     z-index: 2;
 }

@@ -1,47 +1,65 @@
 <!DOCTYPE html>
 <html lang="fr">
-	<head>
-		<meta charset="UTF-8">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">		{{ encore_entry_link_tags('app') }}
-		<link rel="icon" type="image/png" href="{{ asset('assets/images/favicon.png')}}"/>
-		<title>
-			{% block title %}Silent Hill
-			{% endblock %}
-		</title>
-		{% block stylesheets %}{% endblock %}
-	</head>
-	<body>
-		<header>
-			{% block header %}
-				{#  Panneau  #}
-				<div class="panneau-container">
-					<div class="panneau">
-						<div class="panneau-ext">
-							<div class="panneau-red">
-								<p>Silent Hill</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				{# NavBar #}
-				<div class="nav">
-					<div class="back-nav"></div>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous"> {{ encore_entry_link_tags('app') }}
+    <link rel="icon" type="image/png" href="{{ asset('assets/images/favicon.png') }}"/>
+    <title>
+        {% block title %}Silent Hill
+        {% endblock %}
+    </title>
+    {% block stylesheets %}{{ encore_entry_link_tags('app') }}{% endblock %}
+</head>
+<body>
+<header>
+    {% block header %}
+        {# Panneau #}
 
-					<img id="image-home" src="{{ asset('/assets/images/hill.jpg')}}" alt="image village">
-					<nav>
-						<div class="nav-liens">
-							<a id="liens-ext" href="{{ path('information.index') }}">Information</a>
-							<a id="liens-center" href="{{ path('aide.index') }}">Aide</a>
-							<a id="ville" href="{{ path('home') }}">Silent Hill</a>
-							<a id="liens-center" href="{{ path('evenement.index') }}">Evenement</a>
-							<a id="liens-ext" href="{{ path('contact.index') }}">Contact</a>
-						</div>
-					</nav>
-				</div>
-			{% endblock %}
-		</header>
-		{% block body %}{% endblock %}
-		{% block javascripts %}{{ encore_entry_script_tags('app') }}{% endblock %}
+            <div class="row">
+                <div class="col-4 offset-4">
+                    <img class="mx-auto" id="image-home" src="{{ asset('/assets/images/hill.jpg') }}" alt="image village">
+                </div>
+            </div>
+            <div class="row">
+                <div class="panneau-container col-2 offset-5" >
+                    <div class="panneau mx-auto">
+                        <div class="panneau-ext">
+                            <div class="panneau-red">
+                                <p>Silent Hill</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {# NavBar #}
 
-		</body>
+            <div class="row my-3">
+
+                        <div class="col-1 offset-3">
+                            <a class="mx-auto" id="liens-ext" href="{{ path('information.index') }}">Information</a>
+                        </div>
+                        <div class="col-1">
+                            <a class="mx-auto" id="liens-center" href="{{ path('aide.index') }}">Aide</a>
+                        </div>
+                        <div class="mx-auto" class="col-2">
+                            <a id="ville" href="{{ path('home') }}">Silent Hill</a>
+                        </div>
+                        <div class="mx-auto" class="col-1">
+                            <a id="liens-center" href="{{ path('evenement.index') }}">Evenement</a>
+                        </div>
+                        <div class="mx-auto" class="col-1">
+                            <a id="liens-ext" href="{{ path('contact.index') }}">Contact</a>
+                        </div>
+
+            </div>
+
+
+    {% endblock %}
+</header>
+{% block body %}{% endblock %}
+{% block javascripts %}{{ encore_entry_script_tags('app') }}{% endblock %}
+
+</body>
 </html>
