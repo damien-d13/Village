@@ -3,11 +3,13 @@
 {% block title %}Edit Information{% endblock %}
 
 {% block body %}
-    <h1>Edit Information</h1>
+    <div class="container">
+        <h1>Edit Information</h1>
 
-    {{ include('admin/information/_form.html.twig', {'button_label': 'Update'}) }}
+        {{ include('admin/information/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('admin_information_index') }}">back to list</a>
+        <a href="{{ path('admin_information_index') }}">back to list</a>
 
-    {{ include('admin/information/_delete_form.html.twig') }}
+        {{ include('admin/information/_delete_form.html.twig') }}
+    </div>
 {% endblock %}

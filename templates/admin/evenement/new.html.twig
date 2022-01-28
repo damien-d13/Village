@@ -3,9 +3,11 @@
 {% block title %}New Evenement{% endblock %}
 
 {% block body %}
-    <h1>Create new Evenement</h1>
+    <div class="container">
+        <h1>Create new Evenement</h1>
 
-    {{ include('admin/evenement/_form.html.twig') }}
+        {{ include('admin/evenement/_form.html.twig') }}
 
-    <a href="{{ path('admin_evenement_index') }}">back to list</a>
+        <a href="{{ path('admin_evenement_index') }}">back to list</a>
+    </div>
 {% endblock %}

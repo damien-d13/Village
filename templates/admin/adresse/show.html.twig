@@ -3,10 +3,11 @@
 {% block title %}Adresse{% endblock %}
 
 {% block body %}
-    <h1>Adresse</h1>
+    <div class="container">
+        <h1>Adresse</h1>
 
-    <table class="table">
-        <tbody>
+        <table class="table">
+            <tbody>
             <tr>
                 <th>Id</th>
                 <td>{{ adresse.id }}</td>
@@ -33,14 +34,15 @@
             </tr>
             <tr>
                 <th>Code Postal</th>
-                <td>{{ adresse.codepostal}}</td>
+                <td>{{ adresse.codepostal }}</td>
             </tr>
-        </tbody>
-    </table>
+            </tbody>
+        </table>
 
-    <a href="{{ path('admin_adresse_index') }}">back to list</a>
+        <a href="{{ path('admin_adresse_index') }}">back to list</a>
 
-    <a href="{{ path('admin_adresse_edit', {'id': adresse.id}) }}">edit</a>
+        <a href="{{ path('admin_adresse_edit', {'id': adresse.id}) }}">edit</a>
 
-    {{ include('admin/adresse/_delete_form.html.twig') }}
+        {{ include('admin/adresse/_delete_form.html.twig') }}
+    </div>
 {% endblock %}

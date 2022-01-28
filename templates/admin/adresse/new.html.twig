@@ -3,9 +3,11 @@
 {% block title %}New Adresse{% endblock %}
 
 {% block body %}
-    <h1>Create new Adresse</h1>
+    <div class="container">
+        <h1>Create new Adresse</h1>
 
-    {{ include('admin/adresse/_form.html.twig') }}
+        {{ include('admin/adresse/_form.html.twig') }}
 
-    <a href="{{ path('admin_adresse_index') }}">back to list</a>
+        <a href="{{ path('admin_adresse_index') }}">back to list</a>
+    </div>
 {% endblock %}
